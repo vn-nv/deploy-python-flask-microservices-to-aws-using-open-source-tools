@@ -1,6 +1,6 @@
 ## IAM Policies and Roles ##
 locals {
-  account_id = "${data.aws_caller_identity.current.account_id}"
+  account_id = data.aws_caller_identity.current.account_id
 }
 
 resource "aws_iam_role" "ecs_service_role" {
@@ -80,7 +80,7 @@ resource "aws_iam_role" "ec2_role" {
             "dynamodb:UpdateItem",
             "dynamodb:DeleteItem"
           ]
-          Effect   = "Allow"
+          Effect = "Allow"
           Resource = [
             "arn:aws:logs:us-east-1:${local.account_id}:*/*",
             "arn:aws:dynamodb:us-east-1:${local.account_id}:*/*"
@@ -130,7 +130,7 @@ resource "aws_iam_role" "autoscaling_role" {
             "cloudwatch:DescribeAlarms",
             "cloudwatch:DeleteAlarms"
           ]
-          Effect   = "Allow"
+          Effect = "Allow"
           Resource = [
             "arn:aws:ecs:us-east-1:${local.account_id}:*/*",
             "arn:aws:cloudwatch:us-east-1:${local.account_id}:*/*"

@@ -1,6 +1,6 @@
 # Deploy Python Flask API to AWS Using Open Source Tools
 ---
-Forked from aws-samples/deploy-python-flask-microservices-to-aws-using-open-source-tools.  
+Forked from https://github.com/aws-samples/deploy-python-flask-microservices-to-aws-using-open-source-tools  
 There are 3 demos I created to show how to implement this project.  
 Demo 1: Application Configuration and Build.  
 https://www.youtube.com/watch?v=pfLV1oVKEg8  
